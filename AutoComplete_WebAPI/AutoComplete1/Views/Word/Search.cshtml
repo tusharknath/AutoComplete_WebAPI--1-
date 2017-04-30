@@ -1,0 +1,52 @@
+﻿
+<script src="~/js/script.js"></script>
+
+<link href="~/js/style.css" rel="stylesheet" />
+@using (Html.BeginForm())
+{
+    <body>
+        <center>
+            <table border="0" cellpadding="0" cellspacing="0">
+                <tr>
+                    <td>
+                        <div id="holder">
+                           <input type="text" id="keyword" tabindex="0" onkeyup="search()" autocomplete="off">
+                        </div>                        
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div id="result"></div>            
+                    </td>
+                </tr>
+            </table>
+        </center>
+    </body>
+}
+
+
+<script type="text/javascript">
+    var url1 = '@Url.RouteUrl("DefaultApi", new { httproute = "", controller = "WordApi" })';
+    
+
+    function search() {
+        setTimeout(
+            function () {
+                var k = document.getElementById("keyword");
+                var maxLength = 0;
+
+                if (k.value.length > 0) {
+                    autoComplete(k.value, url1, 'GET', 1, "result", "keyword", maxLength);
+                }
+                else {
+                    document.getElementById("result").style.border = "1px solid #8789E7";
+                    document.getElementById("result").innerHTML = "No Result Found.";
+                }
+            }, 1000);
+    }
+
+
+
+
+
+</script>

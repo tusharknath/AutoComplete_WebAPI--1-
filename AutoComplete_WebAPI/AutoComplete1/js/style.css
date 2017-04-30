@@ -1,0 +1,40 @@
+
+
+#holder{
+	width : 350px;
+}
+
+#Menu {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    font-size: 13px;
+    color: #717171;
+    width: 100%;
+}
+
+    #Menu li {
+        border-bottom: 2px solid #eeeeee;
+        padding: 7px 10px 7px 10px;
+        text-align: left;
+    }
+
+        #Menu li:hover {
+            background-color: #8789E7;
+        }
+
+            #Menu li:hover a {
+                color: White;
+                text-decoration:solid;
+                cursor:grab;
+            }
+
+
+    #Menu a:link {
+        color: #717171;
+        text-decoration: none;
+    }
+
+    #Menu a:hover {
+        color: White;
+    }
